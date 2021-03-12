@@ -21,10 +21,12 @@ export class ElectionService {
   constructor(
     @Inject(WEB3) private web3: Web3
   ) {
-    this.contract = contract(electionAbi)
-    this.contract.setProvider(this.web3.currentProvider)
-    this.enable = this.enableMetaMaskAccount()
-    this._listenForEvents()
+    if(this.web3 && this.web3.currentProvider){
+      this.contract = contract(electionAbi)
+      this.contract.setProvider(this.web3.currentProvider)
+      this.enable = this.enableMetaMaskAccount()
+      this._listenForEvents()
+    }
   }
 
   public async isDeployedContract(){
