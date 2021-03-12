@@ -1,0 +1,7 @@
+<div style="text-align: center; padding: 10px;">
+    <span *ngIf="!networkError">Non-Ethereum browser detected. You should consider trying MetaMask!</span>
+    <span *ngIf="networkError">Try to switch to Ropsten Test Network and try again.</span>
+    <br>
+    <br>
+    <button mat-stroked-button color="primary" routerLink="/">Home</button>
+</div>

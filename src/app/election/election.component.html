@@ -1,0 +1,65 @@
+<div style="text-align: center; padding: 10px;">
+    <span><strong>Account:</strong> {{account}}</span>
+    <h3>
+    <p *ngIf="hasVoted && !loading">You have already voted, thanks!</p>
+    <p *ngIf="!hasVoted && !loading">Vote for your favorite candidate:</p></h3>
+    <button *ngIf="!hasVoted && !loading" mat-stroked-button color="primary" (click)="voteCandidate()">Vote</button>
+        <mat-spinner
+        style="margin:0 auto;" 
+           *ngIf="loading">
+        </mat-spinner>
+ 
+</div>
+
+
+<table *ngIf="!loading" mat-table [dataSource]="dataSource">
+
+    <!-- Selection -->
+    <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+        <mat-checkbox
+            (change)="onChange($event, element)"
+            [checked]="selection.isSelected(element)">
+        </mat-checkbox>
+        </td>
+      </ng-container>
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Party Column -->
+    <ng-container matColumnDef="partyName">
+        <th mat-header-cell *matHeaderCellDef> Party </th>
+        <td mat-cell *matCellDef="let element"> {{element.partyName}} </td>
+    </ng-container>
+
+    <!-- Vote Count Column -->
+    <ng-container matColumnDef="voteCount">
+        <th mat-header-cell *matHeaderCellDef >Vote Counts</th>
+        <td mat-cell *matCellDef="let element"> {{element.voteCount}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let element; columns: displayedColumns;"></tr>
+</table>
+
+<div *ngIf="!loading"  style="text-align: center; padding: 10px;">
+    <mat-slide-toggle (change)="onChangeToggle($event)">Show parties results</mat-slide-toggle>
+    <mat-list *ngIf="showParties" style="text-align: center; margin-top: 10px;">
+        <div mat-subheader>Parties</div>
+        <mat-list-item  *ngFor="let party of parties">
+          <div mat-line>{{party.name}}</div>
+          <div mat-line>Tot Votes: {{party.voteCount}}</div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </mat-list>
+</div>
