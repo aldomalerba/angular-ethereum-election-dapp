@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig":{
+              "path": "./webpack.config.js"
+            },
             "outputPath": "dist/election-app",
             "index": "src/index.html",
             "main": "src/main.ts",
