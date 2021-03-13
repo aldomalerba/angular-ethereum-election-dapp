@@ -1,27 +1,49 @@
-# ElectionApp
+# Election DApp - Sample Ethereum Decentalized Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
+## General info
+This project is a simple application developed to introduce me in learning how to develop decentralized applications on Ethereum blockchain.
+<br/><br/>
+A demo application is deployed on Heroku, but a prerequisite to use that is the MetaMask extension.
+<br/>
+Demo: (https://election-angular-dapp.herokuapp.com/)
+<br/>
+![Demo election dapp](./assests/election-dapp.gif)
 
-## Development server
+## Technplogies
+* Ethereum.
+* Solidity.
+* Truffle.
+* Angular CLI.
+* Angular 11.
+* Web 3.
+* Typescript
+* Javascript
+* Chai.js
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Prerequisites
+* MetaMask plugin.
+* Angular-cli.
+* Ganache.
 
-## Code scaffolding
+## Installation
+### Simple Installation - Ropsten Test Network.
+In this way you will use the Smart Contract deployed on Ropsten Test Network.<br/>
+So, in MetaMask you have to select the Ropsten Test Network.
+1. ```git clone https://github.com/aldomalerba/angular-ethereum-election-dapp.git```.
+2. ```cd angular-ethereum-election-dapp```.
+3. ```npm install```.
+4. ```ng serve```.
+### Full Installation - Local Ethereum Envirorment.
+First of all you have to run the Ethereum Blockchain locally with Ganache.
+In this way you will use the Smart Contract deployed locally.<br/>
+So, in MetaMask you have to create a new Custom RPC Network with the settings of the local ethereum blockchain running with ganache and then import a new account (one of ten created by ganache) pasting the account's private key.
+1. ```git clone https://github.com/aldomalerba/angular-ethereum-election-dapp.git```.
+2. ```cd angular-ethereum-election-dapp```.
+3. ```npm install```.
+4. ```truffle compile```.
+5. ```truffle migrate```.
+5. ```ng serve```.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Donations
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ETH: 0xcC73053BFD18227712798ccaF0DD77Afd739e45E

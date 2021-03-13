@@ -53,10 +53,13 @@ export class ElectionComponent implements OnInit {
           this.candidates = await this._electionService.getAllCandidates()
           this.parties = await this._electionService.getAllParties()
           this.hasVoted = await this._electionService.hasVoted(this.account)
-          this.dataSource = new MatTableDataSource(this.candidates)
           this.loading = false;
+          this.dataSource = new MatTableDataSource(this.candidates)
+          this._cd.detectChanges();
       },
-      err => { console.error(err)}
+      err => {
+        this.loading = false;
+      }
     )
   }
 
