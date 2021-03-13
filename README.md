@@ -1,7 +1,8 @@
 # Election DApp - Sample Ethereum Decentalized Application
 
 ## General info
-This project is a simple application developed to introduce me in learning how to develop decentralized applications on Ethereum blockchain.
+I'm learning how to develop decentralized applications<br/>
+This project is a starter Angular DApp where a user can vote for a candidate.
 <br/><br/>
 A demo application is deployed on Heroku, but a prerequisite to use that is the MetaMask extension.
 <br/>
