@@ -10,7 +10,7 @@ Demo: (https://election-angular-dapp.herokuapp.com/)
 <br/>
 ![Demo election dapp](./assests/election-dapp.gif)
 
-## Technplogies
+## Technologies
 * Ethereum.
 * Solidity.
 * Truffle.
